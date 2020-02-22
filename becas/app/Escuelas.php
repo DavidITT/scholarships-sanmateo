@@ -9,4 +9,9 @@ class Escuelas extends Model
     protected $table = 'escuelas';
 
     protected $primaryKey = 'id';
+
+    public function nivel()
+    {
+    	return $this->belongsTo('App\Niv_Educativo', 'id_nivel', 'id');
+    }
 }

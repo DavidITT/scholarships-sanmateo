@@ -25,25 +25,23 @@ class CreateAspirantesTable extends Migration
             //direccion
             $table->string('calle');
             $table->string('numero');
-            $table->bigInteger('barrio')->unsigned();  //FK
-            //telefono
-            $table->unsignedInteger('telefono');
+            $table->bigInteger('id_Barrio')->unsigned();  //FK
             //escuela
-            $table->bigInteger('nivEducativo')->unsigned(); //FK
+            $table->bigInteger('id_Escuela')->unsigned(); //FK
+            $table->string('niv_educativo');
             $table->string('grado');
             $table->double('promedio', 10, 1);
-            //escuela
-            $table->bigInteger('nom_escuela')->unsigned(); //FK
             //Datos de papa
             $table->string('nPadre')->unique()->index();
             //Datos de mama
             $table->string('nMadre')->unique()->index();
+             //telefono
+            $table->bigInteger('telefono');
+            
             $table->timestamps();
-
             //Referencia a llaves foraneas
-            $table->foreign('barrio')->references('id')->on('barrios');
-            $table->foreign('nom_escuela')->references('id')->on('escuelas');
-            $table->foreign('nivEducativo')->references('id')->on('niv_educativos');
+            $table->foreign('id_Barrio')->references('id')->on('barrios');
+            $table->foreign('id_Escuela')->references('id')->on('escuelas');
             
         });
     }

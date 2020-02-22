@@ -20,7 +20,7 @@ class BecasController extends Controller
     public function index()
     {
         $ver_becas = Becas::orderBy('n_folio')->get();
-        return view('Becas.index')->with('becas', $ver_becas);
+        return view('Aspirantes.index')->with('becas', $ver_becas);
     }
 
     /**
