@@ -10,6 +10,7 @@ use App\Escuelas;
 use App\Niv_Educativo;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AspirantesStoreRequest;
+use App\Http\Requests\AspirantesUpdateRequest;
 
 
 
@@ -49,12 +50,9 @@ class AspirantesController extends Controller
      */
     public function store(AspirantesStoreRequest $request)
     {
-        
         $datos = $request->all();
         Aspirantes::create($datos);
         return view('principal.principal_master');
-        
-  
     }
 
     /**
@@ -65,7 +63,7 @@ class AspirantesController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -76,7 +74,15 @@ class AspirantesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $barrio = Barrio::select('id','nombre')->get();
+        $escuela = Escuelas::select('id','nombre_escuela')->get();
+        $nivel = Niv_Educativo::select('id','nombreNivel')->get();
+
+        $aspirantes = Aspirantes::find($id);
+        return view('Aspirantes.edit')->with('aspirantes', $aspirantes)
+                                      ->with('escuela', $escuela)
+                                      ->with('nivel', $nivel)
+                                      ->with('barrio', $barrio);
     }
 
     /**
@@ -86,9 +92,12 @@ class AspirantesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AspirantesUpdateRequest $request, $id)
     {
-        //
+        $datos = $request->all();
+        $aspirantes = Aspirantes::find($id);
+        $aspirantes->update($datos);
+        return view('principal.principal_master');
     }
 
     /**

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AspirantesStoreRequest extends FormRequest
+class AspirantesUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,7 @@ class AspirantesStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'n_folio' => 'required|unique:aspirantes|regex:/^[0-9]+/',
+            
             'aPaterno' => 'required',
             'aMaterno' => 'required',
             'nombre' => 'required',
@@ -35,19 +35,16 @@ class AspirantesStoreRequest extends FormRequest
             'niv_educativo' => 'required',
             'grado' => 'required',
             'promedio' => 'required|Numeric|between:9.0,10.0',         
-            'nPadre' => 'required|unique:aspirantes',
-            'nMadre' => 'required|unique:aspirantes',
-            'telefono' => 'required|unique:aspirantes|regex:/^[0-9]{10}/',
-            
+            'nPadre' => 'required',
+            'nMadre' => 'required',
+            'telefono' => 'required|regex:/^[0-9]{10}/',
+
         ];
     }
-    
+
     public function messages()
-    {
+{
     return [
-        'n_folio.required'   => 'El numero de folio es un campo obligatorio.',
-        'n_folio.unique'   => 'El numero de folio que intenta ingresa ya existe',
-        'n_folio.regex'   => 'El numero de folio debe ser numerico',
         'aPaterno.required'   => 'El apellido paterno es obligatorio.',
         'aMaterno.required'   => 'El apellido materno es obligatorio.',
         'nombre.required'   => 'El nombre del aspirante es obligatorio.',
@@ -65,6 +62,8 @@ class AspirantesStoreRequest extends FormRequest
         'nMadre.required' => 'Es necesario que ingrese el nombre de la madre o tutora.',
         'telefono.required' => 'Es necesario que ingrese un numero telefonico.',
         'telefono.regex' => 'El dato que ingreso no es un numero telefonico, deben ser 10 digitos.',
-        ];
-    }
+        
+        
+    ];
+}
 }

@@ -37,32 +37,20 @@
     @foreach($aspirantes as $as)
     <tr align="center">
      <th>{!! $as->n_folio !!}</th>
-
      <th>{!! $as->aPaterno."&nbsp".$as->aMaterno."&nbsp".$as->nombre !!}</th>
      <th>{!! $as->calle."&nbsp #".$as->numero !!}</th>
      <td>{!! $as->barrio->nombre !!}</td>
      <th>{!! $as->telefono !!}</th>
-
      <th>{!! $as->promedio !!}</th>
-
      <th>{!! $as->escuela->nombre_escuela !!}</th>
-
      <th>{!! $as->nPadre !!}</th>
      <th>{!! $as->nMadre !!}</th>
-
      <th>
       <a href="{!! 'aspirantes/'.$as->id.'/edit'  !!}"><button class="btn btn-sm" style="background-color: #FF8E40; color: white">Editar</button></a>
-    </th>
-
+     </th>
   </tr>
   @endforeach
-
 </tbody>
-
 </table>
 </div>
-
-
-
-
 @include('comp_principales.pie_pag')

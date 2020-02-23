@@ -41,11 +41,6 @@ class BecasController extends Controller
      */
     public function store(Request $request)
     {
-        //$datos = $request->all();
-
-       // Becas::create($datos);
-       // return redirect('/becas');
-
         $datos = new Becas;
      
         $v = \Validator::make($request->all(), [

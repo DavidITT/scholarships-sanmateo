@@ -15,13 +15,13 @@
 
 <div class="form-group">
           {!! Form::label ('n_folio','Numero de folio') !!}
-          {!! Form::number ('n_folio',null,['placeholder'=>'Ingrese numero de folio','class'=>'form-control','min=0','required','pattern=^[0-9]+']) !!}
-
+          {!! Form::number ('n_folio',null,['placeholder'=>'Ingrese numero de folio','class'=>'form-control']) !!}
+           
            @if($errors->has('n_folio'))
                  <div class="alert alert-warning" role="alert">
-                       <p>El numero de folio que intenta ingresar ya existe verifique los datos</p>
+                       {{ $errors->first('n_folio') }}
                  </div>
-          @endif    
+           @endif   
 </div>
 <u><h4>Datos del estudiante</h4></u>
 <div class="row">
