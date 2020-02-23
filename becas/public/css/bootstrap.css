@@ -41,6 +41,7 @@
   box-sizing: border-box;
 }
 
+
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -62,6 +63,17 @@ body {
   text-align: left;
   background-color: #fff;
 }
+
+.my-custom-scrollbar {
+position: relative;
+height: 500px;
+overflow: auto;
+}
+.table-wrapper-scroll-y {
+display: block;
+}
+
+
 
 [tabindex="-1"]:focus {
   outline: 0 !important;

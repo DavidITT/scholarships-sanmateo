@@ -6,11 +6,8 @@
 			<br>
 			<br>
                <h2 align="center"><strong> Reporte</strong></h2>
-            
              <br> 
              <br>
-			
-        
             <!-- /.row -->
             <div class="row">
                 <div class="col-lg-12">

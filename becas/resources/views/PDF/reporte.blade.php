@@ -19,6 +19,7 @@
 <br>
 <p><b>Fecha de emisión:</b> <?=  $date; ?> <br><b>Nota:</b> El siguiente reporte muestra informacion reelevante de todos los aspirantes a la beca</p>
 <br>
+{{ $data }}
        <div>
             <div>
                   <table border="1" align="center" cellspacing="0" cellpadding="5" width="100%" height="50%">
@@ -27,10 +28,10 @@
                      
                       <th align="center">Folio</th>
                       <th align="center">Nombre</th>
-                      <th align="center">Nivel Educativo</th>
+                      <th align="center">Escuela</th>
                       <th align="center">Grado</th>
                       <th align="center">Promedio</th>
-                      
+
                     </tr>
                   </thead>
                     <tbody>
@@ -39,9 +40,9 @@
                     <tr>
                       
                       <td align="center"><?=  $beca->n_folio; ?></td>
-                      <td align="center"><?=  $beca->est_paterno; ?>&nbsp;<?=  $beca->est_materno; ?>&nbsp;<?=  $beca->est_nombre; ?></td>
-                      <td align="center"><?=  $beca->niv_educativo; ?></td>
-                      <td align="center"><?=  $beca->est_grado; ?></td>
+                      <td align="center"><?=  $beca->aPaterno." ".$beca->aMaterno." ".$beca->nombre ?></td>      
+                      <td align="center"><?=  $beca->escuela->nombre_escuela; ?></td>  
+                      <td align="center"><?=  $beca->grado; ?></td>
                       <td align="center"><?=  $beca->promedio; ?></td>
                       
                     </tr>

@@ -9,8 +9,6 @@
 <br>
 <br>  
 
-
-
 {!! Form::open(['url'=>'/aspirantes', 'method'=>'POST']) !!}
 
 <div class="form-group">

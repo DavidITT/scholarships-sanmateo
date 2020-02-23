@@ -1,21 +1,21 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Becas;
+use App\Aspirantes;
+use App\Escuelas;
 use Illuminate\Http\Request;
 
-class PdfController extends Controller
+
+class PDFController extends Controller
 {
-    public function principal_pdf()
+    public function principal_PDF()
    {
    	return view("PDF.principal_pdf");
    }
 
-
-  public function crearPDF($datos,$vistaurl,$tipo)
+   public function crearPDF($datos,$vistaurl,$tipo)
     {
         $data = $datos;
         
@@ -31,8 +31,10 @@ class PdfController extends Controller
 
 
    public function crear_reporte($tipo){
-   	$vistaurl = "PDF.reporte";
-   	$becas = Becas::orderby('n_folio')->get();
+    $vistaurl = "PDF.reporte";
+   	
+   	$becas = Aspirantes::orderby('n_folio')->get();
+      
    	return $this->crearPDF($becas, $vistaurl, $tipo);
    }
 }

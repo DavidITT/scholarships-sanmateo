@@ -52,7 +52,7 @@ class AspirantesController extends Controller
     {
         $datos = $request->all();
         Aspirantes::create($datos);
-        return view('principal.principal_master');
+        return redirect('/aspirantes');
     }
 
     /**
@@ -97,7 +97,7 @@ class AspirantesController extends Controller
         $datos = $request->all();
         $aspirantes = Aspirantes::find($id);
         $aspirantes->update($datos);
-        return view('principal.principal_master');
+        return redirect('/aspirantes');
     }
 
     /**
@@ -108,6 +108,8 @@ class AspirantesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $aspirante = Aspirantes::find($id);
+        $aspirante->destroy($id);
+        return redirect('/aspirantes');
     }
 }
