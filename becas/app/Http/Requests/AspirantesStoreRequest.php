@@ -62,8 +62,11 @@ class AspirantesStoreRequest extends FormRequest
         'promedio.number' => 'El dato que ingeso no es un promedio',
         'promedio.between' => 'El promedio que ingreso no es valido',
         'nPadre.required' => 'Es necesario que ingrese el nombre del padre o tutor.',
+        'nPadre.unique' => 'El nombre del padre o tutor que intenta ingresar ya exite, verifique los datos.',
         'nMadre.required' => 'Es necesario que ingrese el nombre de la madre o tutora.',
+        'nMadre.unique' => 'El nombre de la madre o tutora que intenta ingresar ya exite, verifique los datos.',
         'telefono.required' => 'Es necesario que ingrese un numero telefonico.',
+        'telefono.unique' => 'Es numero telefonico que intenta ingresar ya existe, verifique la información.',
         'telefono.regex' => 'El dato que ingreso no es un numero telefonico, deben ser 10 digitos.',
         ];
     }

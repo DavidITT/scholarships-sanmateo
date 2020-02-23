@@ -28,19 +28,34 @@
 	<div class="col-sm-4">
 		<div class="form-group">
 			{!! Form::label ('aPaterno','Apellido Paterno') !!}
-            {!! Form::text ('aPaterno',null,['placeholder'=>'Ingrese apellido paterno','class'=>'form-control','required','pattern'=>'[A-Za-z] {1-50}']) !!}
+            {!! Form::text ('aPaterno',null,['placeholder'=>'Ingrese apellido paterno','class'=>'form-control']) !!}
+             @if($errors->has('aPaterno'))
+                 <div class="alert alert-warning" role="alert">
+                       {{ $errors->first('aPaterno') }}
+                 </div>
+           @endif  
 		</div>
 	</div>
 	<div class="col-sm-4">
 		<div class="form-group">
 			{!! Form::label ('aMaterno','Apellido Materno') !!}
-            {!! Form::text ('aMaterno',null,['placeholder'=>'Ingrese apellido paterno','class'=>'form-control','required']) !!}
+            {!! Form::text ('aMaterno',null,['placeholder'=>'Ingrese apellido paterno','class'=>'form-control']) !!}
+            @if($errors->has('aMaterno'))
+                 <div class="alert alert-warning" role="alert">
+                       {{ $errors->first('aMaterno') }}
+                 </div>
+           @endif
 		</div>
 	</div>
 	<div class="col-sm-4">
 		<div class="form-group">
 			{!! Form::label ('nombre','Nombre') !!}
-            {!! Form::text ('nombre',null,['placeholder'=>'Ingrese nombre(s)','class'=>'form-control','required']) !!}
+            {!! Form::text ('nombre',null,['placeholder'=>'Ingrese nombre(s)','class'=>'form-control']) !!}
+            @if($errors->has('nombre'))
+                 <div class="alert alert-warning" role="alert">
+                       {{ $errors->first('nombre') }}
+                 </div>
+           @endif
 		</div>
 	</div>
 </div>
@@ -51,19 +66,34 @@
 	<div class="col-sm-4">
 		<div class="form-group">
 			{!! Form::label ('calle','Calle') !!}
-            {!! Form::text ('calle',null,['placeholder'=>'Ingrese calle','class'=>'form-control','required']) !!}
+            {!! Form::text ('calle',null,['placeholder'=>'Ingrese calle','class'=>'form-control']) !!}
+            @if($errors->has('calle'))
+                 <div class="alert alert-warning" role="alert">
+                       {{ $errors->first('calle') }}
+                 </div>
+           @endif
 		</div>
 	</div>
 	<div class="col-sm-4">
 		<div class="form-group">
 			{!! Form::label ('numero','Numero') !!}
-            {!! Form::text ('numero',null,['placeholder'=>'Ingrese numero','class'=>'form-control','required']) !!}
+            {!! Form::text ('numero',null,['placeholder'=>'Ingrese numero','class'=>'form-control']) !!}
+             @if($errors->has('numero'))
+                 <div class="alert alert-warning" role="alert">
+                       {{ $errors->first('numero') }}
+                 </div>
+           @endif
 		</div>
 	</div>
 	<div class="col-sm-4">
 		<div class="form-group">
 			{!! Form::label ('id_Barrio','Barrio') !!}
-            {!! Form::select ('id_Barrio', $barrio->pluck('nombre','id')->all(),null,['placeholder'=>'--Seleccionar--','class'=>'form-control','required']) !!}
+            {!! Form::select ('id_Barrio', $barrio->pluck('nombre','id')->all(),null,['placeholder'=>'--Seleccionar--','class'=>'form-control']) !!}
+             @if($errors->has('id_Barrio'))
+                 <div class="alert alert-warning" role="alert">
+                       {{ $errors->first('id_Barrio') }}
+                 </div>
+           @endif
 		</div>
 	</div>
 </div>
@@ -74,31 +104,46 @@
 	<div class="col-sm-6">
 		<div class="form-group">
 			 {!! Form::label ('id_Escuela','Nombre de la Escuela') !!}
-             {!! Form::select ('id_Escuela',$escuela->pluck('nombre_escuela','id')->all(),null,['placeholder'=>'--Seleccionar--','class'=>'form-control','required']) !!}
+             {!! Form::select ('id_Escuela',$escuela->pluck('nombre_escuela','id')->all(),null,['placeholder'=>'--Seleccionar--','class'=>'form-control']) !!}
+             @if($errors->has('id_Escuela'))
+                 <div class="alert alert-warning" role="alert">
+                       {{ $errors->first('id_Escuela') }}
+                 </div>
+           @endif
 		</div>
 	</div>
 	<div class="col-sm-6">
 		<div class="form-group">
 			{!! Form::label ('niv_educativo','Nivel Educativo') !!}
-			{{ Form::select('niv_educativo',$nivel->pluck('nombreNivel','id')->all(), null, ['class' => 'form-control','required','placeholder'=>'--Seleccionar--']) }}
+			{{ Form::select('niv_educativo',$nivel->pluck('nombreNivel','id')->all(), null, ['class' => 'form-control','placeholder'=>'--Seleccionar--']) }}
+			@if($errors->has('niv_educativo'))
+                 <div class="alert alert-warning" role="alert">
+                       {{ $errors->first('niv_educativo') }}
+                 </div>
+           @endif
 		</div>
 	</div>
 	<div class="col-sm-6">
 		<div class="form-group">
 			{!! Form::label ('grado','Grado') !!}
-		    {{ Form::select('grado',['Primero' => 'Primero', 'Segundo' => 'Segundo', 'Tercero' => 'Tercero','Cuarto' => 'Cuarto','Quinto' => 'Quinto', 'Sexto' => 'Sexto'], null, ['class' => 'form-control','required','placeholder'=>'--Seleccionar--']) }}
+		    {{ Form::select('grado',['Primero' => 'Primero', 'Segundo' => 'Segundo', 'Tercero' => 'Tercero','Cuarto' => 'Cuarto','Quinto' => 'Quinto', 'Sexto' => 'Sexto'], null, ['class' => 'form-control','placeholder'=>'--Seleccionar--']) }}
+		    @if($errors->has('grado'))
+                 <div class="alert alert-warning" role="alert">
+                       {{ $errors->first('grado') }}
+                 </div>
+           @endif
 		</div>
 	</div>
 	<div class="col-sm-6">
 		<div class="form-group">
 			{!! Form::label ('promedio','Promedio') !!}
-            {!! Form::text ('promedio',null,['placeholder'=>'Ingrese promedio','class'=>'form-control','required','id'=>'promedio']) !!}
+            {!! Form::text ('promedio',null,['placeholder'=>'Ingrese promedio','class'=>'form-control']) !!}
 
              @if($errors->has('promedio'))
                  <div class="alert alert-warning" role="alert">
-                       <p>El promedio que intenta ingresar no es valido</p>
+                       {{ $errors->first('promedio') }}
                  </div>
-            @endif 
+           @endif
 		</div>
 	</div>
 </div>
@@ -109,47 +154,35 @@
 	<div class="col-sm-4">
 		<div class="form-group">
 			{!! Form::label ('nPadre','Nombre completo del padre o tutor') !!}
-            {!! Form::text ('nPadre',null,['placeholder'=>'Ingrese nombre completo del padre (Apellido Paterno, Apellido Materno, Nombre(s))','class'=>'form-control','required']) !!} 
-
-               @if($errors->has('nPadre'))
+            {!! Form::text ('nPadre',null,['placeholder'=>'Ingrese nombre completo del padre Apellido Paterno, Apellido Materno, Nombre(s)','class'=>'form-control']) !!} 
+            @if($errors->has('nPadre'))
                  <div class="alert alert-warning" role="alert">
-                       <p>El nombre  que ingreso no es valido porque: </p>
-                       <ul>
-                          <li>El nombre ya existe</li> 
-                      </ul>
+                       {{ $errors->first('nPadre') }}
                  </div>
-                @endif 
+           @endif 
 		</div>
 	</div>
 	<div class="col-sm-4">
 		<div class="form-group">
 			{!! Form::label ('nMadre','Nombre completo de la madre o tutora') !!}
-          {!! Form::text ('nMadre',null,['placeholder'=>'Ingrese nombre completo de la madre (Apellido Paterno, Apellido Materno, Nombre(s))','class'=>'form-control','required']) !!}
+          {!! Form::text ('nMadre',null,['placeholder'=>'Ingrese nombre completo de la madre Apellido Paterno, Apellido Materno, Nombre(s)','class'=>'form-control']) !!}
 
            @if($errors->has('nMadre'))
                  <div class="alert alert-warning" role="alert">
-                       <p>El nombre  que ingreso no es valido porque: </p>
-                       <ul>
-                          <li>El nombre ya existe</li> 
-                      </ul>
+                       {{ $errors->first('nMadre') }}
                  </div>
-           @endif 
+           @endif
 			
 		</div>
 	</div>
 	<div class="col-sm-4">
 		<div class="form-group">
 			{!! Form::label ('telefono','Telefono') !!}
-            {!! Form::tel ('telefono',null,['placeholder'=>'Ingrese un numero telefonico','class'=>'form-control','required','pattern=^[0-9]{10}']) !!}
+            {!! Form::tel ('telefono',null,['placeholder'=>'Ingrese un numero telefonico','class'=>'form-control']) !!}
 
            @if($errors->has('telefono'))
                  <div class="alert alert-warning" role="alert">
-                       <p>El numero de telefono que ingreso no es valido porque: </p>
-                       <ul>
-                       	  <li>No es un numero</li>
-                          <li>El numero debe ser igual a 10 digitos</li> 
-                          <li>El numero ya existe</li>
-                      </ul>
+                       {{ $errors->first('telefono') }}
                  </div>
            @endif 
 		</div>
