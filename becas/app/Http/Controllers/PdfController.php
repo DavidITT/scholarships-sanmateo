@@ -15,13 +15,17 @@ class PDFController extends Controller
    	return view("PDF.principal_pdf");
    }
 
-   public function crearPDF($datos,$vistaurl,$tipo)
+    public function crear_reporte($tipo)
+    {
+        $vistaurl = "PDF.reporte";
+   	    $becas = Aspirantes::orderby('n_folio')->get();
+   	    return $this->crearPDF($becas, $vistaurl, $tipo);
+    }
+
+    public function crearPDF($datos,$vistaurl,$tipo)
     {
         $data = $datos;
-        
         $date = date('Y-m-d');
-
-
         $view =  \View::make($vistaurl, compact('data', 'date'))->render();
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view);        
@@ -29,12 +33,24 @@ class PDFController extends Controller
         if($tipo==2){return $pdf->download('reporte.pdf'); }
     }
 
+    public function crear_talon_aspirante($id)
+    {
+        $vistaurl = "PDF.talon";
+        $aspirante = Aspirantes::all();
+        $talon = $aspirante->find($id);
+        return $this->crearTalon($talon, $vistaurl, $id);
+    }
 
-   public function crear_reporte($tipo){
-    $vistaurl = "PDF.reporte";
-   	
-   	$becas = Aspirantes::orderby('n_folio')->get();
-      
-   	return $this->crearPDF($becas, $vistaurl, $tipo);
-   }
+    public function crearTalon($datos,$vistaurl,$id)
+    {
+        $data = $datos;
+        $date = date('Y-m-d');
+        $view =  \View::make($vistaurl, compact('data', 'date'))->render();
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);        
+        return $pdf->stream('talon');
+        
+    }
+
+
 }
