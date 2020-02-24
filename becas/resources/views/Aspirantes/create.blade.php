@@ -101,7 +101,7 @@
 	<div class="col-sm-6">
 		<div class="form-group">
 			 {!! Form::label ('id_Escuela','Nombre de la Escuela') !!}
-             {!! Form::select ('id_Escuela',$escuela->pluck('nombre_escuela','id')->all(),null,['placeholder'=>'--Seleccionar--','class'=>'form-control']) !!}
+             {!! Form::select ('id_Escuela',$escuela->pluck('nombre_esc','id')->all(),null,['placeholder'=>'--Seleccionar--','class'=>'form-control']) !!}
              @if($errors->has('id_Escuela'))
                  <div class="alert alert-danger" role="alert">
                        {{ $errors->first('id_Escuela') }}
@@ -112,7 +112,7 @@
 	<div class="col-sm-6">
 		<div class="form-group">
 			{!! Form::label ('niv_educativo','Nivel Educativo') !!}
-			{{ Form::select('niv_educativo',$nivel->pluck('nombreNivel','id')->all(), null, ['class' => 'form-control','placeholder'=>'--Seleccionar--']) }}
+			{{ Form::select('niv_educativo',$nivel->pluck('nombreNiv','id')->all(), null, ['class' => 'form-control','placeholder'=>'--Seleccionar--']) }}
 			@if($errors->has('niv_educativo'))
                  <div class="alert alert-danger" role="alert">
                        {{ $errors->first('niv_educativo') }}

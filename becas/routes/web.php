@@ -17,10 +17,6 @@ Route::get('registro', function () {
 	return view('Aspirantes.create');
 });
 
-Route::get('escuelas', function () {
-	return view('Escuelas.create');
-});
-
 //Ruta al controlador de aspirantes
 Route::resource('aspirantes','AspirantesController');
 

@@ -10,8 +10,7 @@ class Escuelas extends Model
 
     protected $primaryKey = 'id';
 
-     protected $fillable = ['nombre_escuela ','id_nivel '];
-
+    protected $fillable = ['nombre_esc','id_nivel'];
 
     public function nivel()
     {

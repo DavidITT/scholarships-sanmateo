@@ -47,7 +47,7 @@ Direccion de Educación</h4>
   </tr>
   <tr>
     <td align="right" width="50%">Escuela:</td>
-    <td width="50%">{!!$data->escuela->nombre_escuela!!}</td>
+    <td width="50%">{!!$data->escuela->nombre_esc!!}</td>
   </tr>
   <tr>
     <td align="right" width="50%">Grado:</td>

@@ -3,12 +3,11 @@
 @include('comp_principales.menu')
 
 
+<br>
+<br>
+<h4 align="center"><strong>Escuelas Registradas</strong></h4>
+<br>
 
-<br>
-<br>
-<h2 align="center"><strong>Escuelas registradas</strong></h2>
-<br>
-<br>
 
 <p align="center"><button type="button" class="btn btn-danger" onclick="window.location.href = 'escuelas/create'"><i class="fas fa-plus-circle"></i> Nuevo Registro</button> </p>
 
@@ -16,27 +15,31 @@
  <p>Bucar: <input type="text" class="form-control form-control-md" style="width:100%" id="search" placeholder="Busqueda..."></p>
 </div>
 <br>
-  <table class="table table-hover table-wrapper-scroll-y my-custom-scrollbar table-responsive" id="tablabusqueda" align="center">
+  <table class="table table-hover table-wrapper-scroll-y my-custom-scrollbar table-responsive" id="tablabusqueda">
     <thead style="background-color: #D5DBDB">
       <tr align="center">
        <th>Id</th>
-       <th>Nombre de la Escuela</th>
-       <th>Nivel educativo</th>
-       
+       <th>Nombre de Escuela</th>
+       <th>Nivel Educativo</th>
+       <th>Acciones</th>
      </tr>
    </thead>
    <tbody>
     @foreach($escuelas as $es)
     <tr align="center">
-     <th>{!! $es->id!!}</th>
-     <th>{!! $es->nombre_escuela !!}</th>
-     <th>{!! $es->nivel->nombreNivel !!}</th>
-      <th>
-      <a href="{!! 'escuelas/'.$es->id.'/edit'  !!}"><button class="btn btn-sm btn-outline-success"><i class="fas fa-eye-dropper"></i></button>  
+     <th>{!! $es->id !!}</th>
+     <th>{!! $es->nombre_esc !!}</th>
+     <th>{!! $es->nivel->nombreNiv!!}</th>
+     <th>
+      <a href="{!! 'escuelas/'.$es->id.'/edit'  !!}"><button class="btn btn-sm btn-outline-success"><i class="fas fa-eye-dropper"></i></button>
+                            
                         {!! Form::open(['method' => 'DELETE' , 'url' => '/escuelas/'.$es->id]) !!}
                         <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i> </button>
                         {!! Form::close() !!}
-		</a></a>
+
+      <a 
+        href="{!! asset('crear_talon_aspirante/'.$es->id) !!}" target="_blank"><button class="btn btn-sm btn-outline-info" ><i class="fas fa-print"></i></button>
+      </a></a></a>
      </th>
   </tr>
   @endforeach
@@ -44,3 +47,4 @@
 </table>
 
 @include('comp_principales.pie_pag')
+

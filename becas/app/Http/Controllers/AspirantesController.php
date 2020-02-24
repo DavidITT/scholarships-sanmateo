@@ -35,8 +35,8 @@ class AspirantesController extends Controller
     public function create()
     {
         $barrio = Barrio::select('id','nombre')->get();
-        $escuela = Escuelas::select('id','nombre_escuela')->get();
-        $nivel = Niv_Educativo::select('id','nombreNivel')->get();
+        $escuela = Escuelas::select('id','nombre_esc')->get();
+        $nivel = Niv_Educativo::select('id','nombreNiv')->get();
         return view('Aspirantes.create')->with('barrio', $barrio) 
                                         ->with('escuela', $escuela)
                                         ->with('nivel', $nivel);
@@ -75,8 +75,8 @@ class AspirantesController extends Controller
     public function edit($id)
     {
         $barrio = Barrio::select('id','nombre')->get();
-        $escuela = Escuelas::select('id','nombre_escuela')->get();
-        $nivel = Niv_Educativo::select('id','nombreNivel')->get();
+        $escuela = Escuelas::select('id','nombre_esc')->get();
+        $nivel = Niv_Educativo::select('id','nombreNiv')->get();
 
         $aspirantes = Aspirantes::find($id);
         return view('Aspirantes.edit')->with('aspirantes', $aspirantes)

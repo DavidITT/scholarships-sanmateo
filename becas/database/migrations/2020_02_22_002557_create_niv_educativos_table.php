@@ -15,7 +15,7 @@ class CreateNivEducativosTable extends Migration
     {
         Schema::create('niv_educativos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nombreNivel'); //Primaria,Secundaria,Medio Superior
+            $table->string('nombreNiv'); //Primaria,Secundaria,Medio Superior
             $table->timestamps();
         });
     }

@@ -6,6 +6,7 @@ use App\Niv_Educativo;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Http\FormRequest;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\EscuelasStoreRequest;
 
 class EscuelasController extends Controller
 {
@@ -28,10 +29,8 @@ class EscuelasController extends Controller
      */
     public function create()
     {
-        $escuela = Escuelas::select('id','nombre_escuela')->get();
-        $nivel = Niv_Educativo::select('id','nombreNivel')->get();
-        return view('Escuelas.create') ->with('escuela', $escuela)
-                                        ->with('nivel', $nivel);
+        $nivel = Niv_Educativo::select('id','nombreNiv')->get();
+        return view('Escuelas.create')->with('nivel', $nivel);
     }
 
     /**
@@ -40,7 +39,7 @@ class EscuelasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(EscuelasStoreRequest $request)
     {
         $datos = $request->all();
         Escuelas::create($datos);

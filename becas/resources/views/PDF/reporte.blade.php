@@ -38,7 +38,7 @@
                       
                       <td align="center"><?=  $beca->n_folio; ?></td>
                       <td align="center"><?=  $beca->aPaterno." ".$beca->aMaterno." ".$beca->nombre ?></td>      
-                      <td align="center"><?=  $beca->escuela->nombre_escuela; ?></td>  
+                      <td align="center"><?=  $beca->escuela->nombre_esc; ?></td>  
                       <td align="center"><?=  $beca->grado; ?></td>
                       <td align="center"><?=  $beca->promedio; ?></td>
                       
