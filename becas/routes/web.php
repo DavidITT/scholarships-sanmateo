@@ -17,8 +17,15 @@ Route::get('registro', function () {
 	return view('Aspirantes.create');
 });
 
+Route::get('escuelas', function () {
+	return view('Escuelas.create');
+});
+
 //Ruta al controlador de aspirantes
 Route::resource('aspirantes','AspirantesController');
+
+//Ruta al controlador de escuelas
+Route::resource('escuelas','EscuelasController');
 
 //PDFS
 Route::get('principal_pdf', 'PDFController@principal_PDF');

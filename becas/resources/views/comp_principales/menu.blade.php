@@ -37,6 +37,9 @@
 				<li class="nav-item">
 					<a class="nav-link" href="{!! asset ('principal_pdf') !!}">Reportes</a>
 				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{!! asset ('escuelas') !!}">Escuelas</a>
+				</li>
 			</ul>
 		</nav>
 	</div>
