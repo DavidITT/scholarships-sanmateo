@@ -8,9 +8,9 @@
 
 <br>
 <br>
-<h2 align="center"><strong>Becas Registradas</strong></h2>
+<h4 align="center"><strong>Becas Registradas</strong></h4>
 <br>
-<br>
+
 
 <p align="center"><button type="button" class="btn btn-danger" onclick="window.location.href = 'aspirantes/create'"><i class="fas fa-plus-circle"></i> Nuevo Registro</button> </p>
 
@@ -52,7 +52,8 @@
                         <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i> </button>
                         {!! Form::close() !!}
 
-      <a href="{!! 'aspirantes/'.$as->id.'/edit'  !!}"><button class="btn btn-sm btn-outline-info"><i class="fas fa-print"></i></button>
+      <a 
+        href="{!! asset('crear_talon_aspirante/'.$as->id) !!}" target="_blank"><button class="btn btn-sm btn-outline-info" ><i class="fas fa-print"></i></button>
       </a></a></a>
      </th>
   </tr>

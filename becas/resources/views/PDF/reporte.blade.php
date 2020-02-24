@@ -4,9 +4,6 @@
 	<meta charset="UTF-8">
   <link rel="icon" href="{!! asset('logo.png') !!}" type="image/x-icon"> 
 	<title>Reporte</title>
-
-
-	  
 </head>
 <body>
 

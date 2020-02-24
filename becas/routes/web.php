@@ -30,6 +30,7 @@ Route::resource('escuelas','EscuelasController');
 //PDFS
 Route::get('principal_pdf', 'PDFController@principal_PDF');
 Route::get('crear_reporte_becas/{tipo}','PDFController@crear_reporte');
+Route::get('crear_talon_aspirante/{id}','PDFController@crear_talon_aspirante');
 
 
 //Ruta para atrapar excepciones y errores 
