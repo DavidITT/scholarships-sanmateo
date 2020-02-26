@@ -1,7 +1,23 @@
 <?php
 
 Route::get('/', function () {
-	return view('public');
+	return view('welcome');
+});
+
+Route::get('login', function () {
+	return view('auth.login');
+});
+
+Route::get('register', function () {
+	return view('auth.register');
+});
+
+Route::get('verify', function () {
+	return view('auth.verify');
+});
+
+Route::get('welcome', function () {
+	return view('welcome');
 });
 
 Route::get('public', function () {
@@ -29,13 +45,10 @@ Route::get('crear_reporte_becas/{tipo}','PDFController@crear_reporte');
 Route::get('crear_talon_aspirante/{id}','PDFController@crear_talon_aspirante');
 
 
-//Ruta para atrapar excepciones y errores 
-Route::any('{catchall}', function() {
-   return Response::view('Error.error404', [], 404);
-})->where('catchall', '.*');
 
 
 
 
+Auth::routes();
 
-
+Route::get('/home', 'HomeController@index')->name('home');
