@@ -15,8 +15,10 @@ class CreateEscuelasTable extends Migration
     {
         Schema::create('escuelas', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('matricula')->unique()->index();
             $table->string('nombre_esc');
             $table->bigInteger('id_nivel')->unsigned();
+            $table->string('direccion');
             $table->timestamps();
 
             $table->foreign('id_nivel')->references('id')->on('niv_educativos');

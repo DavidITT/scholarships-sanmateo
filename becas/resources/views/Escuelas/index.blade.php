@@ -15,36 +15,34 @@
  <p>Bucar: <input type="text" class="form-control form-control-md" style="width:100%" id="search" placeholder="Busqueda..."></p>
 </div>
 <br>
-  <table class="table table-hover table-wrapper-scroll-y my-custom-scrollbar table-responsive" id="tablabusqueda">
+  <table class="table-hover table-responsive-x" id="tablabusqueda" style="width:100%" >
     <thead style="background-color: #D5DBDB">
       <tr align="center">
-       <th>Id</th>
+       <th>Matricula</th>
        <th>Nombre de Escuela</th>
        <th>Nivel Educativo</th>
+       <th>Direccion</th>
        <th>Acciones</th>
      </tr>
    </thead>
    <tbody>
     @foreach($escuelas as $es)
     <tr align="center">
-     <th>{!! $es->id !!}</th>
+     <th>{!! $es->matricula !!}</th>
      <th>{!! $es->nombre_esc !!}</th>
      <th>{!! $es->nivel->nombreNiv!!}</th>
+     <th>{!! $es->direccion!!}</th>
      <th>
       <a href="{!! 'escuelas/'.$es->id.'/edit'  !!}"><button class="btn btn-sm btn-outline-success"><i class="fas fa-eye-dropper"></i></button>
                             
                         {!! Form::open(['method' => 'DELETE' , 'url' => '/escuelas/'.$es->id]) !!}
                         <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i> </button>
                         {!! Form::close() !!}
-
-      <a 
-        href="{!! asset('crear_talon_aspirante/'.$es->id) !!}" target="_blank"><button class="btn btn-sm btn-outline-info" ><i class="fas fa-print"></i></button>
-      </a></a></a>
+      </a>
      </th>
   </tr>
   @endforeach
 </tbody>
 </table>
-
 @include('comp_principales.pie_pag')
 

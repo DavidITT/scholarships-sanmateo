@@ -18,7 +18,7 @@
  <p>Bucar: <input type="text" class="form-control form-control-md" style="width:100%" id="search" placeholder="Busqueda..."></p>
 </div>
 <br>
-  <table class="table table-hover table-wrapper-scroll-y my-custom-scrollbar table-responsive" id="tablabusqueda">
+  <table class="table-hover table-responsive-x" id="tablabusqueda" style="width:100%">
     <thead style="background-color: #D5DBDB">
       <tr align="center">
        <th>Folio</th>

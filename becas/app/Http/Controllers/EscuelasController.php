@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Foundation\Http\FormRequest;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\EscuelasStoreRequest;
+use App\Http\Requests\EscuelasUpdateRequest;
 
 class EscuelasController extends Controller
 {
@@ -55,7 +56,7 @@ class EscuelasController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -66,7 +67,11 @@ class EscuelasController extends Controller
      */
     public function edit($id)
     {
-        //
+        $nivel = Niv_Educativo::select('id','nombreNiv')->get();
+
+        $escuelas = Escuelas::find($id);
+        return view('Escuelas.edit')->with('escuelas', $escuelas)
+                                      ->with('nivel', $nivel);
     }
 
     /**
@@ -76,9 +81,12 @@ class EscuelasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EscuelasStoreRequest $request, $id)
     {
-        //
+        $datos = $request->all();
+        $escuelas = Escuelas::find($id);
+        $escuelas->update($datos);
+        return redirect('/escuelas');
     }
 
     /**
@@ -89,6 +97,8 @@ class EscuelasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $escuelas = Escuelas::find($id);
+        $escuelas->destroy($id);
+        return redirect('/escuelas');
     }
 }
