@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 class CreateUsersTable extends Migration
 {
@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->bigInteger('tipoUsuario')->unsigned();
             $table->rememberToken();
             $table->timestamps();
-
+            
             $table->foreign('tipoUsuario')->references('id')->on('tipos_usuario');
         });
     }
