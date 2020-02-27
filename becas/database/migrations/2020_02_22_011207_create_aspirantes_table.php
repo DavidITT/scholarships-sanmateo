@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 class CreateAspirantesTable extends Migration
 {
@@ -25,7 +25,7 @@ class CreateAspirantesTable extends Migration
             //direccion
             $table->string('calle');
             $table->string('numero');
-            $table->bigInteger('id_Barrio')->unsigned(); //FK
+            $table->bigInteger('id_Barrio')->unsigned();  //FK
             //escuela
             $table->bigInteger('id_Escuela')->unsigned(); //FK
             $table->string('niv_educativo');
@@ -35,14 +35,14 @@ class CreateAspirantesTable extends Migration
             $table->string('nPadre')->unique()->index();
             //Datos de mama
             $table->string('nMadre')->unique()->index();
-            //telefono
+             //telefono
             $table->bigInteger('telefono');
-
+            
             $table->timestamps();
             //Referencia a llaves foraneas
             $table->foreign('id_Barrio')->references('id')->on('barrios');
             $table->foreign('id_Escuela')->references('id')->on('escuelas');
-
+            
         });
     }
 
