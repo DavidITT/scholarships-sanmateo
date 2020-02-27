@@ -1,5 +1,5 @@
 <?php
 
-  header("Location: public/principal");
+  header("Location: public/login");
   
 ?>

@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 
 class PDFController extends Controller
 {
+  
     public function principal_PDF()
    {
    	return view("PDF.principal_pdf");

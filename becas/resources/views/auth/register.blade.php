@@ -25,11 +25,12 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="tipoUsuario" class="col-md-4 col-form-label text-md-right">{{ __('tipoUsuario') }}</label>
+                        <div class="form-group row" hidden="true">
+                            <label for="tipoUsuario" class="col-md-4 col-form-label text-md-right" hidden="true">{{ __('Tipo de Usuario') }}</label>
 
                             <div class="col-md-6">
-                                <input id="tipoUsuario" type="text" class="form-control @error('tipoUsuario') is-invalid @enderror" name="tipoUsuario" value="{{ old('tipoUsuario') }}" required autocomplete="tipoUsuario" autofocus>
+                                <input id="tipoUsuario" type="text" class="form-control @error('tipoUsuario') is-invalid @enderror" name="tipoUsuario" value="{{ 2 }}" required autocomplete="tipoUsuario" autofocus
+                                hidden="true">
 
                                 @error('tipoUsuario')
                                     <span class="invalid-feedback" role="alert">

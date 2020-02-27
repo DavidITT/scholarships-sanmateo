@@ -41,6 +41,13 @@ class Kernel extends HttpKernel
             'throttle:60,1',
             'bindings',
         ],
+        'usuarioAdmin' => [
+            \App\Http\Middleware\MDusuAdministrador::class,
+        ],
+
+        'usuarioBasico' => [
+            \App\Http\Middleware\MDusuBasico::class,
+        ],
     ];
 
     /**

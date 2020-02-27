@@ -16,6 +16,12 @@ class EscuelasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
+      public function __construct()
+    {
+        $this->middleware('usuarioAdmin');
+    } 
+
     public function index()
     {
         $escuelas= Escuelas::orderBy('id')->get();
