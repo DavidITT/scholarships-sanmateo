@@ -1,14 +1,9 @@
-  
 <footer>
-	<img src="{!! asset ('images/abajologo.png') !!}" height="200px" width="100%">
+    <img height="200px" src="{!! asset ('images/abajologo.png') !!}" width="100%">
+    </img>
 </footer>
-
-</div>
-</div>
-
 <script>
- 
- $(document).ready(function(){
+    $(document).ready(function(){
  $("#search").keyup(function(){
  _this = this;
  
@@ -21,7 +16,3 @@
  });
 });
 </script>
-
-
-</body>
-</html>
