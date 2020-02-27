@@ -3,11 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <title>Becas 2020</title>
+    <link rel="icon" type="text/css" href="{!! asset ('images/logo.png') !!}">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -19,12 +18,29 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+<body style="background-color: white">
+ <div class="container" style="background-color: white">
+   <div class="jumpbotron">
+    <div class="row">
+            <div class="col-sm-1"></div>
+
+            <div class="col-sm-4">
+                <img src="{!! asset ('images/logo.png') !!}" height="100px" width="100%">
+
+            </div>
+            <div class="col-sm-5">
+                <img src="{!! asset ('images/adelante.png') !!}" height="100px" width="100%">
+            </div>
+
+            <div class="col-sm-2"></div>
+        </div>
+   <br>
+
+    <div id="app" >
+        <nav class="navbar navbar-expand-sm bg-light navbar-light navbar-collapse">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Larave') }}
+                    
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -41,11 +57,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar Sesión') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
                                 </li>
                             @endif
                         @else
@@ -71,10 +87,19 @@
                 </div>
             </div>
         </nav>
+         <br>
+    <br>
 
         <main class="py-4">
             @yield('content')
         </main>
     </div>
+    <br>
+    <br>
+    <footer>
+    <img src="{!! asset ('images/abajologo.png') !!}" height="100px" width="100%">
+    </footer>
+</div>
+</div>
 </body>
 </html>
