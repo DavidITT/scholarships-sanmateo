@@ -32,7 +32,7 @@ Route::group(['middleware' => 'auth'], function () {
 
    Route::get('sin_acceso_2', function () {
         return view("Mensajes.error_acceso")
-            ->with('msj','Privilegios insuficientes para acceder a esta sección. <br />Es necesario iniciar sesión.');
+            ->with('msj','Privilegios insuficientes para acceder a esta sección.');
     });
 
    Route::get('crear_talon_aspirante/{id}','PDFController@crear_talon_aspirante');
