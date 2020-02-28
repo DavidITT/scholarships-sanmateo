@@ -33,6 +33,7 @@
 				<li class="nav-item">
 					<a class="nav-link" href="{!! asset ('aspirantes') !!}">Ver</a>
 				</li>
+				@if(Auth::User()->tipoUsuario == 1)
 				&nbsp; &nbsp; &nbsp; &nbsp; 
 				<li class="nav-item">
 					<a class="nav-link" href="{!! asset ('principal_pdf') !!}">Reportes</a>
@@ -41,6 +42,7 @@
 				<li class="nav-item">
 					<a class="nav-link" href="{!! asset ('escuelas') !!}">Escuelas</a>
 				</li>
+				  @endif
 				&nbsp; &nbsp; &nbsp; &nbsp; 
 				<li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
