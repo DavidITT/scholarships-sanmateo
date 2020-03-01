@@ -10,6 +10,12 @@
 <br>
 <h4 align="center"><strong>Becas Registradas</strong></h4>
 <br>
+          @if(session('success'))
+               <div class="alert alert-success alert-dismissible">
+                     <button type="button" class="close" data-dismiss="alert">&times;</button>
+                     <strong><i class="fas fa-check-circle"></i> ¡Exito!</strong> {{ session('success') }}
+                </div>
+            @endif
 
 
 <p align="center"><button type="button" class="btn btn-danger" onclick="window.location.href = 'aspirantes/create'"><i class="fas fa-plus-circle"></i> Nuevo Registro</button> </p>
@@ -49,7 +55,7 @@
       <a href="{!! 'aspirantes/'.$as->id.'/edit'  !!}"><button class="btn btn-sm btn-outline-success"><i class="fas fa-eye-dropper"></i></button>
                             
                         {!! Form::open(['method' => 'DELETE' , 'url' => '/aspirantes/'.$as->id]) !!}
-                        <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i> </button>
+                        <button class="btn btn-sm btn-outline-danger" onclick="return ConfirmDelete()"><i class="fas fa-trash"></i> </button>
                         {!! Form::close() !!}
 
       <a 
@@ -60,5 +66,18 @@
   @endforeach
 </tbody>
 </table>
+
+<script type="text/javascript">
+  function ConfirmDelete(){
+    var respuesta = confirm("¿Estas seguro que deseas eliminar este registro?");
+    if(respuesta == true){
+         
+      return true;
+    }else{
+      alertify.error('Se ha cancelado la operacion');
+      return false;
+    }
+  }
+</script>
 
 @include('comp_principales.pie_pag')

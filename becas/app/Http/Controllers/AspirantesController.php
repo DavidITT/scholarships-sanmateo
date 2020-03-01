@@ -25,6 +25,7 @@ class AspirantesController extends Controller
     {
         $aspirantes = Aspirantes::orderBy('n_folio')->get();
         return view('Aspirantes.index')->with('aspirantes', $aspirantes);
+                                    
     }
 
     /**
@@ -52,7 +53,7 @@ class AspirantesController extends Controller
     {
         $datos = $request->all();
         Aspirantes::create($datos);
-        return redirect('/aspirantes');
+        return redirect('/aspirantes')->with('success','Aspirante registrado');
     }
 
     /**
@@ -97,7 +98,7 @@ class AspirantesController extends Controller
         $datos = $request->all();
         $aspirantes = Aspirantes::find($id);
         $aspirantes->update($datos);
-        return redirect('/aspirantes');
+        return redirect('/aspirantes')->with('success','Aspirante actualizado correctamente');;
     }
 
     /**
@@ -110,6 +111,6 @@ class AspirantesController extends Controller
     {
         $aspirante = Aspirantes::find($id);
         $aspirante->destroy($id);
-        return redirect('/aspirantes');
+        return redirect('/aspirantes')->with('success','Aspirante Eliminado');;
     }
 }

@@ -50,7 +50,7 @@ class EscuelasController extends Controller
     {
         $datos = $request->all();
         Escuelas::create($datos);
-        return redirect('/escuelas');
+        return redirect('/escuelas')->with('success','Escuela registrada');
     }
 
 
@@ -87,12 +87,12 @@ class EscuelasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(EscuelasStoreRequest $request, $id)
+    public function update(EscuelasUpdateRequest $request, $id)
     {
         $datos = $request->all();
         $escuelas = Escuelas::find($id);
         $escuelas->update($datos);
-        return redirect('/escuelas');
+        return redirect('/escuelas')->with('success','Escuela actualizada correctamente');
     }
 
     /**
@@ -105,6 +105,6 @@ class EscuelasController extends Controller
     {
         $escuelas = Escuelas::find($id);
         $escuelas->destroy($id);
-        return redirect('/escuelas');
+        return redirect('/escuelas')->with('success','Escuela eliminada');
     }
 }
