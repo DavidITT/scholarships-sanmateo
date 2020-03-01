@@ -14,7 +14,7 @@
 
 <h2 align="center"> <strong><u>Reporte de Aspirantes</u></strong></h2>
 <br>
-<p><b>Fecha de emisión:</b> <?=  $date; ?> <br><b>Nota:</b> El siguiente reporte muestra informacion reelevante de todos los aspirantes a la beca</p>
+<p><b>Fecha de emisión:</b> <?=  $date; ?> <br><b>Nota:</b> El siguiente reporte muestra informacion reelevante de todos los aspirantes acreedores a la beca ordenados por promedio</p>
 <br>
 {{ $data }}
        <div>

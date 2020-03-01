@@ -7,7 +7,7 @@
 			<br>
                 <div class="alert alert-danger alert-dismissible">
                      <button type="button" class="close" data-dismiss="alert">&times;</button>
-                     <strong>¡Precaución!</strong> La informacion contenida en este apartado no debe ser compartida ni mucho menos utilizada para fines maliciosos ni lucrativos, de no ser asi se informara a las autoridades correspondientes.
+                     <strong><i class="fas fa-exclamation-triangle" style="size:7"></i> ¡Precaución!</strong> La informacion contenida en este apartado no debe ser compartida ni mucho menos utilizada para fines maliciosos ni lucrativos, de no ser asi se informara a las autoridades correspondientes.
                 </div>
             <div class="row">
                 <div class="col-lg-12">

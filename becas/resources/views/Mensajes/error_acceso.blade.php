@@ -57,7 +57,7 @@
                                     <br>
                                         <div class="alert alert-danger">
                                             <h6>
-                                                {!! $msj !!}
+                                               <i class="fas fa-exclamation-triangle" style="size:7"></i> {!! $msj !!}
                                             </h6>
                                             <br>
                                             </br>
