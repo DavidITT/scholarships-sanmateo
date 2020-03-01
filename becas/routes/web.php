@@ -62,3 +62,4 @@ Route::group(['middleware' => 'usuarioAdmin'], function () {
 
 });
 //fin middleware usuarioBasico
+
