@@ -48,7 +48,7 @@
      <td>{!! $as->barrio->nombre !!}</td>
      <th>{!! $as->telefono !!}</th>
      <th>{!! $as->promedio !!}</th>
-     <th>{!! $as->escuela->nombre_escuela !!}</th>
+     <th>{!! $as->escuela->nombre_esc !!}</th>
      <th>{!! $as->nPadre !!}</th>
      <th>{!! $as->nMadre !!}</th>
      <th>
@@ -70,8 +70,7 @@
 <script type="text/javascript">
   function ConfirmDelete(){
     var respuesta = confirm("¿Estas seguro que deseas eliminar este registro?");
-    if(respuesta == true){
-         
+    if(respuesta == true){ 
       return true;
     }else{
       alertify.error('Se ha cancelado la operacion');
