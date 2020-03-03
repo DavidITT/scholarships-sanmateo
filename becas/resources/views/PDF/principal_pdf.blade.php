@@ -22,7 +22,6 @@
                                 </thead>
                                 <tbody>
                                     <tr class="odd gradeX">
-                                        
                                         <td align="center">Aspirantes Seleccionados</td>
                                         <td align="center">
                                             <a href="{!! asset('crear_reporte_becas/1') !!}" target="_blank" ><button class="btn-sm btn btn btn-dark" style="color: white" ><i class="far fa-eye"></i> Ver</button></a>

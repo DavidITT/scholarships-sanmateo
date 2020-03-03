@@ -19,7 +19,7 @@ class PDFController extends Controller
     public function crear_reporte($tipo)
     {
         $vistaurl = "PDF.reporte";
-   	    $becas = Aspirantes::orderby('n_folio')->get();
+   	    $becas = Aspirantes::orderby('promedio')->take(10)->get();
    	    return $this->crearPDF($becas, $vistaurl, $tipo);
     }
 
@@ -30,7 +30,7 @@ class PDFController extends Controller
         $view =  \View::make($vistaurl, compact('data', 'date'))->render();
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view);        
-        if($tipo==1){return $pdf->stream('reporte');}
+        if($tipo==1){return $pdf->stream('reporte'); }
         if($tipo==2){return $pdf->download('reporte.pdf'); }
     }
 
