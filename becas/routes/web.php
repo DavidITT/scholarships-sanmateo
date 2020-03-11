@@ -42,6 +42,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Ruta al controlador de aspirantes
     Route::resource('aspirantes','AspirantesController');
+
+    Route::get('combo_escuelas/{niv_educativo}','AjaxController@combo');
 	
 });
 //fin middleware auth

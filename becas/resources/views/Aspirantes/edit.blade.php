@@ -2,6 +2,24 @@
 
 @include('comp_principales.menu')
 
+<script type="text/javascript">
+    function cambiar_combo(niv_educativo){
+        $("#id_Escuela").empty();
+        $.ajax({
+            type:'GET',
+            url:'../../combo_escuelas/'+niv_educativo,
+
+            success:function(data){
+                var escuelas = data;
+
+                for(var i = 0; i < escuelas.length; i++){
+                    $('#id_Escuela').append('<option value="' + escuelas[i].id + '">' + escuelas[i].nombre_esc + '</option>');
+                }
+            }
+        })
+    }
+</script>
+
 <br>
 <br>
 <h4 align="center"><strong>Editar Registro de Aspirante</strong></h4>
@@ -97,19 +115,8 @@
 <div class="row">
 	<div class="col-sm-6">
 		<div class="form-group">
-			 {!! Form::label ('id_Escuela','Nombre de la Escuela') !!}
-             {!! Form::select ('id_Escuela',$escuela->pluck('nombre_esc','id')->all(),$aspirantes->id_Escuela,['placeholder'=>'--Seleccionar--','class'=>'form-control']) !!}
-             @if($errors->has('id_Escuela'))
-                 <div class="alert alert-danger" role="alert">
-                       {{ $errors->first('id_Escuela') }}
-                 </div>
-           @endif
-		</div>
-	</div>
-	<div class="col-sm-6">
-		<div class="form-group">
 			{!! Form::label ('niv_educativo','Nivel Educativo') !!}
-			{{ Form::select('niv_educativo',$nivel->pluck('nombreNiv','id')->all(), $aspirantes->niv_educativo, ['class' => 'form-control','placeholder'=>'--Seleccionar--']) }}
+			{{ Form::select('niv_educativo',$nivel->pluck('nombreNiv','id')->all(), null, ['class' => 'form-control','placeholder'=>'--Seleccionar--','onchange'=>'cambiar_combo(this.value);']) }}
 			@if($errors->has('niv_educativo'))
                  <div class="alert alert-danger" role="alert">
                        {{ $errors->first('niv_educativo') }}
@@ -117,6 +124,17 @@
            @endif
 		</div>
 	</div>
+  <div class="col-sm-6">
+    <div class="form-group">
+          {!! Form::label ('id_Escuela','Nombre de la Escuela') !!}
+             {!! Form::select ('id_Escuela', array('0'=>'--Selecionar--'), null,['class' => 'form-control']) !!}
+             @if($errors->has('id_Escuela'))
+                 <div class="alert alert-danger" role="alert">
+                       {{ $errors->first('id_Escuela') }}
+                 </div>
+             @endif
+    </div>
+  </div>
 	<div class="col-sm-6">
 		<div class="form-group">
 			{!! Form::label ('grado','Grado') !!}
