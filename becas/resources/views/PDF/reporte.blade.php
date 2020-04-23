@@ -16,7 +16,6 @@
 <br>
 <p><b>Fecha de emisión:</b> <?=  $date; ?> <br><b>Nota:</b> El siguiente reporte muestra informacion reelevante de todos los aspirantes acreedores a la beca ordenados por promedio</p>
 <br>
-{{ $data }}
        <div>
             <div>
                   <table border="1" align="center" cellspacing="0" cellpadding="5" width="100%" height="50%">
