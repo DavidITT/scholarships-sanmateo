@@ -19,7 +19,8 @@ class PDFController extends Controller
     public function crear_reporte($tipo)
     {
         $vistaurl = "PDF.reporte";
-   	    $becas = Aspirantes::orderby('promedio')->take(10)->get();
+   	    
+        $becas = Aspirantes::orderby('promedio','DESC')->take(500)->get();
    	    return $this->crearPDF($becas, $vistaurl, $tipo);
     }
 
